@@ -25,15 +25,16 @@ video {
   max-width: 100%;
 }
 
-#startButton {
-  border-radius:35%;
+button {
+  padding: 10px;
+  border-radius: 20px;
 }
 
-#endButton{
-  border-radius:35%
+.hidden {
+  display: none;
 }
+
 .lightUpSquares {
-  border-radius:0%;
   height: 150px;
   width:150px;
 
