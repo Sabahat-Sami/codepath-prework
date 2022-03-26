@@ -1,8 +1,14 @@
 /* If you're feeling fancy you can add interactivity 
     to your site with Javascript */
-
+const clueHoldTime = 1000;
 console.log("Hello, world!");
 let pattern = [2, 2, 4, 3, 2, 1, 2, 4];
+let colorbtn = {
+  "red":1,
+  "green":2,
+  "magenta":3,
+  "yellow":4
+}
 let progress = 0; 
 let gamePlaying = false;
 let tonePlaying = false;
@@ -20,8 +26,15 @@ let endGame = () => {
   document.getElementById("startButton").classList.remove("hidden")
 }
 
-
-
+function lightButton(color){
+  document.getElementById(color+"Square").classList.add("lit")
+}
+function clearButton(color){
+  document.getElementById(color+"Square").classList.remove("lit")
+}
+function playSingleClue(color){
+  btn = 
+}
 // Sound Synthesis Functions
 const freqMap = {
   1: 261.6,

@@ -46,11 +46,12 @@ button {
   justify-content: space-evenly;
 }
 
+
 #greenSquare {
   background-color: lightgreen;
 }
 
-button#greenSquare:active{
+#greenSquare:active{
   background-color: green;
 }
 
@@ -58,7 +59,7 @@ button#greenSquare:active{
   background-color: red;
 }
 
-button#redSquare:active{
+#redSquare:active, #redSquare.lit{
   background-color: darkred;
 }
 
@@ -66,7 +67,7 @@ button#redSquare:active{
   background-color: yellow;
 }
 
-button#yellowSquare:active{
+#yellowSquare:active, #yellowSquare.lit {
   background-color: orange;
 }
 
@@ -74,6 +75,6 @@ button#yellowSquare:active{
   background-color: magenta;
 }
 
-button#magentaSquare:active {
+#magentaSquare:active, #magentaSquare.lit {
   background-color: purple;
 }
