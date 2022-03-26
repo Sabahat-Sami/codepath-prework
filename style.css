@@ -25,18 +25,38 @@ video {
   max-width: 100%;
 }
 
-button {
+#startButton {
   border-radius:35%;
 }
 
+#endButton{
+  border-radius:35%
+}
 .lightUpSquares {
   border-radius:0%;
-  height: 100px;
-  width:100px;
+  height: 150px;
+  width:150px;
 
 }
 
 .gameBoard {
   margin-top:10%;
   display:flex;
+  justify-content: space-evenly;
+}
+
+#greenSquare {
+  background-color: lightgreen;
+}
+
+#redSquare {
+  background-color: red;
+}
+
+#yellowSquare {
+  background-color: yellow;
+}
+
+#purpleSquare {
+  background-color: purple;
 }
