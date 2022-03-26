@@ -4,6 +4,7 @@ const clueHoldTime = 1000;
 const cluePauseTime = 333;
 const nextClueWaitTime = 1000;
 console.log("Hello, world!");
+
 let pattern = [2, 2, 4, 3, 2, 1, 2, 4];
 let colorbtn = {
   1:"red",
@@ -17,7 +18,7 @@ let tonePlaying = false;
 let volume = 0.5;  
 let startGame = () => {
   gamePlaying = true;
-  progress = 1;
+  progress = 5;
   document.getElementById("startButton").classList.add("hidden")
   document.getElementById("endButton").classList.remove("hidden")
   playClueSequence();
@@ -42,16 +43,17 @@ function playSingleClue(btn){
   let color = colorbtn[btn];
   lightButton(color);
   playTone(btn, clueHoldTime);
-  setTimeout(clearButton, clueHoldTime, btn)
+  setTimeout(clearButton, clueHoldTime, color)
 }
 
 let playClueSequence = () => {
   let delay = nextClueWaitTime;
   for(let i = 0; i < progress; i++){
-    setTimeout(playSingleClue, delay, pattern[i])
+    setTimeout(playSingleClue, delay, pattern[i]);
+    delay += clueHoldTime;
+    delay += cluePauseTime;
   }
-  delay += clueHoldTime;
-  delay += cluePauseTime;
+
 }
 // Sound Synthesis Functions
 const freqMap = {

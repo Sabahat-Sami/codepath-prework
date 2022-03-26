@@ -51,7 +51,7 @@ button {
   background-color: lightgreen;
 }
 
-#greenSquare:active{
+#greenSquare:active, #greenSquare.lit{
   background-color: green;
 }
 
