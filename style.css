@@ -15,6 +15,7 @@ body {
   margin: 1rem;
   font-family: sans-serif;
   line-height: 1.5;
+  background-color: aqua;
 }
 
 /* images and videos max out at full width */
@@ -22,4 +23,20 @@ img,
 video {
   height: auto;
   max-width: 100%;
+}
+
+button {
+  border-radius:35%;
+}
+
+.lightUpSquares {
+  border-radius:0%;
+  height: 100px;
+  width:100px;
+
+}
+
+.gameBoard {
+  margin-top:10%;
+  display:flex;
 }
