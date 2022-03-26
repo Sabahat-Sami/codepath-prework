@@ -1,6 +1,8 @@
 /* If you're feeling fancy you can add interactivity 
     to your site with Javascript */
 const clueHoldTime = 1000;
+const cluePauseTime = 333;
+const nextClueWaitTime = 1000;
 console.log("Hello, world!");
 let pattern = [2, 2, 4, 3, 2, 1, 2, 4];
 let colorbtn = {
@@ -33,7 +35,10 @@ function clearButton(color){
   document.getElementById(color+"Square").classList.remove("lit")
 }
 function playSingleClue(color){
-  btn = 
+  let btn = colorbtn[color];
+  lightButton(color);
+  playTone(btn, clueHoldTime);
+  setTimeout(clearButton, clueHoldTime, btn)
 }
 // Sound Synthesis Functions
 const freqMap = {
