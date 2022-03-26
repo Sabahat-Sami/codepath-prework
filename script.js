@@ -21,6 +21,7 @@ let endGame = () => {
 }
 
 
+
 // Sound Synthesis Functions
 const freqMap = {
   1: 261.6,

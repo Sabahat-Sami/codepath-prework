@@ -50,18 +50,30 @@ button {
   background-color: lightgreen;
 }
 
-button.greenSquare:active{
-  
+button#greenSquare:active{
+  background-color: green;
 }
 
 #redSquare {
   background-color: red;
 }
 
+button#redSquare:active{
+  background-color: darkred;
+}
+
 #yellowSquare {
   background-color: yellow;
 }
 
-#purpleSquare {
+button#yellowSquare:active{
+  background-color: orange;
+}
+
+#magentaSquare {
+  background-color: magenta;
+}
+
+button#magentaSquare:active {
   background-color: purple;
 }
