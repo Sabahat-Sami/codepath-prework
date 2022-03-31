@@ -5,7 +5,7 @@ const cluePauseTime = 333;
 const nextClueWaitTime = 1000;
 console.log("Hello, world!");
 
-let pattern = [2, 2, 4, 3, 2, 1, 2, 4];
+
 let colorbtn = {
   1:"red",
   2:"green",
@@ -17,7 +17,18 @@ let gamePlaying = false;
 let tonePlaying = false;
 let volume = 0.5;  
 let guessCounter = 0;
+let NUM_OF_BUTTONS = 4;
 
+let generateRandomPattern = () => {
+  let pattern = []
+  let randLength = Math.floor(Math.random() * 9 + 1)
+  for(let i = 0; i < randLength; i++){
+    pattern.push(Math.floor(Math.random() * (NUM_OF_BUTTONS + 1) + 1))
+  }
+  return pattern;
+}
+let pattern = generateRandomPattern();
+alert(pattern)
 let startGame = () => {
   gamePlaying = true;
   progress = 0;
