@@ -23,6 +23,14 @@ let strikes = 0;
 let pattern = []
 let STRIKES_ALLOWED = 3;
 
+let strike = document.getElementById("strikes");
+let newStrike = document.createTextNode("strikes: " + strikes);
+strike.appendChild(newStrike);
+
+let updateStrikes = (strikes) => {
+  strike.innerHTML = "strikes: " + strikes;
+}
+
 let generateRandomPattern = () => {
   let pattern = []
   let randLength = Math.floor(Math.random() * 10 + 1)
@@ -110,10 +118,10 @@ let guess = (btn) => {
     }
     else{
       strikes += 1
+      updateStrikes(strikes);
     }
   }
-
-
+}
 
 // Sound Synthesis Functions
 const freqMap = {
