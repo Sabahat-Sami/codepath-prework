@@ -78,3 +78,11 @@ button {
 #magentaSquare:active, #magentaSquare.lit {
   background-color: purple;
 }
+
+#blueSquare {
+  background-color:blue;
+}
+
+#blueSquare:active, #blueSquare.lit {
+  background-color:navy;
+}
