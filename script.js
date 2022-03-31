@@ -51,7 +51,7 @@ function playSingleClue(btn){
 let playClueSequence = () => {
   guessCounter = 0;
   let delay = nextClueWaitTime;
-  for(let i = 0; i < progress; i++){
+  for(let i = 0; i < progress+1; i++){
     setTimeout(playSingleClue, delay, pattern[i]);
     delay += clueHoldTime;
     delay += cluePauseTime;
@@ -72,13 +72,26 @@ let guess = (btn) => {
   if(!gamePlaying){
     return;
   }
-  if(btn === pattern[guess]){
-    
+  
+  if(btn === pattern[guessCounter]){
+    if(guessCounter !== progress){
+      guessCounter += 1
+    }
+    else{
+      if(guessCounter === pattern.length){
+        winGame();
+      }
+      else{
+      progress += 1
+      playClueSequence()
+        }
+      } 
+    }
+  else  {
+    loseGame()
+    }
   }
-  else{
-    loseGame();
-  }
-}
+
 
 
 // Sound Synthesis Functions
