@@ -55,6 +55,7 @@ let endGame = () => {
   gamePlaying = false;
   document.getElementById("endButton").classList.add("hidden")
   document.getElementById("startButton").classList.remove("hidden")
+  updateStrikes(0);
 }
 
 function lightButton(color){
@@ -112,16 +113,16 @@ let guess = (btn) => {
         }
         }
       } 
-  else  {
+  else {
+    strikes += 1
+    updateStrikes(strikes);
     if(strikes === STRIKES_ALLOWED){
-      loseGame()
-    }
-    else{
-      strikes += 1
-      updateStrikes(strikes);
+      strikes = 0;
+      loseGame();
+      }
     }
   }
-}
+
 
 // Sound Synthesis Functions
 const freqMap = {
