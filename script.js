@@ -12,29 +12,35 @@ let colorbtn = {
   3:"magenta",
   4:"yellow"
 }
+
 let progress = 0; 
 let gamePlaying = false;
 let tonePlaying = false;
 let volume = 0.5;  
 let guessCounter = 0;
 let NUM_OF_BUTTONS = 4;
+let strikes = 0;
+let pattern = []
+let STRIKES_ALLOWED = 3;
 
 let generateRandomPattern = () => {
   let pattern = []
-  let randLength = Math.floor(Math.random() * 9 + 1)
+  let randLength = Math.floor(Math.random() * 10 + 1)
   for(let i = 0; i < randLength; i++){
-    pattern.push(Math.floor(Math.random() * (NUM_OF_BUTTONS + 1) + 1))
+    pattern.push(Math.floor(Math.random() * (NUM_OF_BUTTONS) + 1))
   }
   return pattern;
 }
-let pattern = generateRandomPattern();
-alert(pattern)
+
 let startGame = () => {
   gamePlaying = true;
   progress = 0;
+  pattern = generateRandomPattern();
+  alert(pattern);
   document.getElementById("startButton").classList.add("hidden")
   document.getElementById("endButton").classList.remove("hidden")
   playClueSequence();
+
 }
 
 let endGame = () => {
@@ -99,7 +105,11 @@ let guess = (btn) => {
         }
       } 
   else  {
-    loseGame()
+    if(strikes === STRIKES_ALLOWED){
+      loseGame()
+    }
+    else{
+      strikes += 1
     }
   }
 
