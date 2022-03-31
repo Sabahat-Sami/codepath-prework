@@ -16,9 +16,11 @@ let progress = 0;
 let gamePlaying = false;
 let tonePlaying = false;
 let volume = 0.5;  
+let guessCounter = 0;
+
 let startGame = () => {
   gamePlaying = true;
-  progress = 5;
+  progress = 0;
   document.getElementById("startButton").classList.add("hidden")
   document.getElementById("endButton").classList.remove("hidden")
   playClueSequence();
@@ -47,14 +49,38 @@ function playSingleClue(btn){
 }
 
 let playClueSequence = () => {
+  guessCounter = 0;
   let delay = nextClueWaitTime;
   for(let i = 0; i < progress; i++){
     setTimeout(playSingleClue, delay, pattern[i]);
     delay += clueHoldTime;
     delay += cluePauseTime;
   }
-
 }
+
+let loseGame = () => {
+  endGame();
+  alert("You Lost!")
+}
+
+let winGame = () => {
+  endGame();
+  alert("You Won!")
+}
+
+let guess = (btn) => {
+  if(!gamePlaying){
+    return;
+  }
+  if(btn === pattern[guess]){
+    
+  }
+  else{
+    loseGame();
+  }
+}
+
+
 // Sound Synthesis Functions
 const freqMap = {
   1: 261.6,
