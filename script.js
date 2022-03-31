@@ -10,7 +10,8 @@ let colorbtn = {
   1:"red",
   2:"green",
   3:"magenta",
-  4:"yellow"
+  4:"yellow",
+  5:"blue"
 }
 
 let progress = 0; 
@@ -18,7 +19,7 @@ let gamePlaying = false;
 let tonePlaying = false;
 let volume = 0.5;  
 let guessCounter = 0;
-let NUM_OF_BUTTONS = 4;
+let NUM_OF_BUTTONS = 5;
 let strikes = 0;
 let pattern = []
 let STRIKES_ALLOWED = 3;
@@ -33,7 +34,7 @@ let updateStrikes = (strikes) => {
 
 let generateRandomPattern = () => {
   let pattern = []
-  let randLength = Math.floor(Math.random() * 10 + 1)
+  let randLength = Math.floor(Math.random() * 6 + 2)
   for(let i = 0; i < randLength; i++){
     pattern.push(Math.floor(Math.random() * (NUM_OF_BUTTONS) + 1))
   }
@@ -120,8 +121,11 @@ let guess = (btn) => {
       strikes = 0;
       loseGame();
       }
+    else{
+      playClueSequence();
     }
   }
+}
 
 
 // Sound Synthesis Functions
