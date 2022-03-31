@@ -78,15 +78,15 @@ let guess = (btn) => {
       guessCounter += 1
     }
     else{
-      if(guessCounter === pattern.length){
-        winGame();
-      }
-      else{
-      progress += 1
-      playClueSequence()
+        progress += 1
+        if(progress === pattern.length){
+          winGame();
+        }
+        else{
+          playClueSequence()
+        }
         }
       } 
-    }
   else  {
     loseGame()
     }
