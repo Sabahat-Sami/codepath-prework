@@ -67,7 +67,7 @@ One thing that I would like to implement if I had more time would be to do the r
 
 ## Interview Recording URL Link
 
-[My 5-minute Interview Recording]: https://www.loom.com/share/5d6ca42b429347b98fdbc03dd21b631b
+[My 5-minute Interview Recording]: "https://www.loom.com/share/5d6ca42b429347b98fdbc03dd21b631b"
 
 
 ## License
