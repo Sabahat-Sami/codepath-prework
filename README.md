@@ -67,12 +67,12 @@ One thing that I would like to implement if I had more time would be to do the r
 
 ## Interview Recording URL Link
 
-[My 5-minute Interview Recording](your-link-here)
+[My 5-minute Interview Recording]: https://www.loom.com/share/5d6ca42b429347b98fdbc03dd21b631b
 
 
 ## License
 
-    Copyright [YOUR NAME]
+    Copyright [Sabahat Sami]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
